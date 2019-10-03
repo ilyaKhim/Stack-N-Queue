@@ -2,30 +2,30 @@ import java.util.Arrays;
 
 public class Stack implements AbstractStructure {
     private int maxSize;
-    int[] stack;
+    int[] arr;
     private int top;
     Stack(int maxSize) {
         this.maxSize = maxSize;
-        this.stack = new int[maxSize];
+        this.arr = new int[maxSize];
         this.top = -1;
     }
 
     @Override
     public void push(int value) {
         if(!isFull()){
-            this.stack[++top] = value;
+            this.arr[++top] = value;
         }
         else System.out.println("Стек полон");
     }
 
     @Override
     public int pop() {
-        return this.stack[this.top--];
+        return this.arr[this.top--];
     }
 
     @Override
     public int peek() {
-        return this.stack[this.top];
+        return this.arr[this.top];
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Stack implements AbstractStructure {
 
     }
     void view(){
-        System.out.println(Arrays.toString(Arrays.copyOfRange(this.stack, 0,top+1)));
+        System.out.println(Arrays.toString(Arrays.copyOfRange(this.arr, 0,top+1)));
     }
 
 
